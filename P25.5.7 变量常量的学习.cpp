@@ -2,7 +2,7 @@
 
 #define PI 3.14
 
-//为使用printf而引用的头文件
+//为使用printf 与 scanf 而引用的头文件
 #include <stdio.h>
 
 //{}外部的为全局变量，名字相同时优先输出局部变量。
@@ -37,9 +37,19 @@ int main()
 	printf("\\n %%d\n", age);//连续使用两次\\与//实现转义
 	printf("num = %lf\n", num);
 
-	//对于scanf函数的使用
-	scanf("%d %lf", &age, &height);//意为输入函数与python“input”类似
-	num = age * height;
+
+	//对于scanf函数的使用：构建一个简单的BMI计算器
+	double Height;
+	double Weight;
+	printf("please input height(m) : ");
+	scanf("%lf", &Height);//意为输入函数与python“input”类似，格式必须跟定义函数的格式一致。
+
+	printf("please input weight(kg) : ");
+	scanf("%lf", &Weight);
+
+	double square;
+	square = Height * Height;
+	num = Weight / square;
 	printf("num = %lf", num);
 	
 	return 0;
